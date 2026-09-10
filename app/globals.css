@@ -89,7 +89,7 @@ body { @apply bg-background text-foreground font-sans; }
 .connector-line { @apply h-9 w-px bg-primary/25 lg:h-px lg:w-full; }
 .connector-pill { @apply flex size-8 items-center justify-center rounded-full bg-accent; }
 .qr-flow { @apply flex flex-col items-center gap-2 text-center; }
-.qr-devices { @apply relative flex h-24 w-32 items-center justify-center; }
+.qr-devices { @apply relative flex h-32 w-40 items-center justify-center; }
 .qr-parent-phone { @apply relative z-10 flex h-20 w-12 flex-col items-center justify-center gap-1 rounded-xl bg-foreground text-background shadow-md; animation: qr-parent 3.6s ease-in-out infinite; }
 .qr-child-tablet { @apply absolute right-0 z-0 flex h-16 w-24 items-center justify-center rounded-xl border-4 border-foreground bg-card p-1 text-primary shadow-md; animation: qr-tablet 3.6s ease-in-out infinite; }
 .qr-tablet-screen { @apply flex h-full w-full flex-col items-center justify-center gap-1 rounded-lg bg-secondary font-mono text-[6px] font-bold uppercase tracking-tight text-primary; }
@@ -103,9 +103,9 @@ body { @apply bg-background text-foreground font-sans; }
 .qr-scan-beam { @apply absolute z-20 h-0.5 w-14 rounded-full bg-accent shadow-[0_0_10px_var(--accent)]; animation: qr-scan 3.6s ease-in-out infinite; }
 .qr-scan-beam { @apply absolute z-20 h-0.5 w-10 rounded-full bg-accent shadow-[0_0_10px_var(--accent)]; animation: qr-scan 3.6s ease-in-out infinite; }
 .qr-flow-label { @apply font-mono text-[9px] font-bold uppercase tracking-[0.12em] text-muted-foreground; }
-@keyframes qr-parent { 0%, 12% { transform: translateX(13px) rotate(5deg); } 35%, 75% { transform: translateX(0) rotate(0deg); } 92%, 100% { transform: translateX(13px) rotate(5deg); } }
-@keyframes qr-tablet { 0%, 12% { transform: translateX(-8px) rotate(-3deg); } 35%, 75% { transform: translateX(0) rotate(0deg); } 92%, 100% { transform: translateX(-8px) rotate(-3deg); } }
-@keyframes qr-scan { 0%, 25% { opacity: 0; transform: translate(-12px, -18px) rotate(-12deg); } 35% { opacity: 1; transform: translate(14px, -18px) rotate(-12deg); } 55% { opacity: 1; transform: translate(14px, 18px) rotate(-12deg); } 75%, 100% { opacity: 0; transform: translate(-12px, 18px) rotate(-12deg); } }
+@keyframes qr-parent { 0%, 12% { transform: translate(27px, 20px) rotate(5deg); } 35%, 75% { transform: translate(0, 0) rotate(0deg); } 92%, 100% { transform: translate(27px, 20px) rotate(5deg); } }
+@keyframes qr-tablet { 0%, 12% { transform: translate(-28px, -25px) rotate(-7deg); } 35%, 75% { transform: translate(0, 0) rotate(0deg); } 92%, 100% { transform: translate(-28px, -25px) rotate(-7deg); } }
+@keyframes qr-scan { 0%, 25% { opacity: 0; transform: translate(-20px, -26px) rotate(-12deg); } 35% { opacity: 1; transform: translate(18px, -26px) rotate(-12deg); } 55% { opacity: 1; transform: translate(18px, 16px) rotate(-12deg); } 75%, 100% { opacity: 0; transform: translate(-20px, 16px) rotate(-12deg); } }
 .profile { @apply flex flex-col items-center gap-1 rounded-xl p-1 text-[9px] font-semibold text-muted-foreground transition-colors; }
 .profile-active { @apply bg-secondary text-foreground; }
 .info-card { @apply relative rounded-3xl border border-border bg-card p-6 shadow-sm; }
