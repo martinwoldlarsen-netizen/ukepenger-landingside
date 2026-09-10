@@ -90,11 +90,18 @@ body { @apply bg-background text-foreground font-sans; }
 .connector-pill { @apply flex size-8 items-center justify-center rounded-full bg-accent; }
 .qr-flow { @apply flex flex-col items-center gap-2 text-center; }
 .qr-devices { @apply relative flex h-32 w-40 items-center justify-center; }
-.qr-scan-illustration { @apply relative z-10 h-28 w-44 rounded-2xl object-cover shadow-md; animation: qr-illustration 3.6s ease-in-out infinite; }
-.qr-login-card { @apply absolute bottom-0 right-0 z-20 flex items-center gap-1 rounded-lg bg-card px-2 py-1 font-mono text-[7px] font-bold uppercase tracking-tight text-primary shadow-md; }
-.qr-scan-beam { @apply absolute z-20 h-0.5 w-14 rounded-full bg-accent shadow-[0_0_10px_var(--accent)]; animation: qr-scan 3.6s ease-in-out infinite; }
+.qr-card { @apply absolute bottom-2 left-3 z-0 flex h-16 w-20 flex-col items-center justify-center gap-1 rounded-xl border-2 border-primary/20 bg-card shadow-sm; }
+.qr-real { @apply grid size-9 grid-cols-9 gap-px rounded bg-background p-0.5; }
+.qr-cell { @apply aspect-square bg-background; }
+.qr-cell-on { @apply bg-foreground; }
+.qr-arm { @apply absolute z-10 h-28 w-40; animation: qr-arm 3.6s ease-in-out infinite; transform-origin: 75% 20%; }
+.qr-sleeve { @apply absolute right-5 top-0 h-28 w-9 rounded-t-full bg-primary/80; transform: rotate(28deg); }
+.qr-hand { @apply absolute right-12 top-14 h-8 w-10 rounded-[45%] bg-accent; transform: rotate(18deg); }
+.qr-scanner-phone { @apply absolute right-11 top-5 flex h-16 w-9 items-center justify-center rounded-lg border-2 border-foreground bg-foreground text-background shadow-lg; transform: rotate(12deg); }
+.qr-login-card { @apply absolute bottom-0 right-0 z-20 flex items-center gap-1 rounded-lg bg-card px-2 py-1 font-mono text-[7px] font-bold uppercase tracking-tight text-primary; }
+.qr-scan-beam { @apply absolute z-20 h-0.5 w-12 rounded-full bg-accent shadow-[0_0_10px_var(--accent)]; animation: qr-scan 3.6s ease-in-out infinite; }
 .qr-flow-label { @apply font-mono text-[9px] font-bold uppercase tracking-[0.12em] text-muted-foreground; }
-@keyframes qr-illustration { 0%, 12% { transform: translate(-18px, -18px) rotate(-4deg); } 35%, 75% { transform: translate(0, 0) rotate(0deg); } 92%, 100% { transform: translate(-18px, -18px) rotate(-4deg); } }
+@keyframes qr-arm { 0%, 15% { transform: translate(24px, -24px) rotate(-12deg); } 36%, 74% { transform: translate(0, 0) rotate(0deg); } 92%, 100% { transform: translate(24px, -24px) rotate(-12deg); } }
 @keyframes qr-parent { 0%, 12% { transform: translate(27px, 20px) rotate(5deg); } 35%, 75% { transform: translate(0, 0) rotate(0deg); } 92%, 100% { transform: translate(27px, 20px) rotate(5deg); } }
 @keyframes qr-tablet { 0%, 12% { transform: translate(-28px, -25px) rotate(-7deg); } 35%, 75% { transform: translate(0, 0) rotate(0deg); } 92%, 100% { transform: translate(-28px, -25px) rotate(-7deg); } }
 @keyframes qr-scan { 0%, 25% { opacity: 0; transform: translate(-20px, -26px) rotate(-12deg); } 35% { opacity: 1; transform: translate(18px, -26px) rotate(-12deg); } 55% { opacity: 1; transform: translate(18px, 16px) rotate(-12deg); } 75%, 100% { opacity: 0; transform: translate(-20px, 16px) rotate(-12deg); } }
