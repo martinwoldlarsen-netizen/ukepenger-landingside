@@ -34,6 +34,19 @@ function Logo() {
   )
 }
 
+function QRCode() {
+  const cells = Array.from({ length: 121 }, (_, index) => {
+    const x = index % 11
+    const y = Math.floor(index / 11)
+    const finder = (originX: number, originY: number) => x >= originX && x < originX + 4 && y >= originY && y < originY + 4
+    const inFinder = finder(0, 0) || finder(7, 0) || finder(0, 7)
+    const finderBorder = inFinder && ((x === 0 || x === 3 || y === 0 || y === 3) || (x >= 1 && x <= 2 && y >= 1 && y <= 2))
+    const data = ((x * 7 + y * 11 + x * y) % 5) < 2
+    return <span key={index} className={finderBorder || (!inFinder && data) ? 'qr-cell qr-cell-on' : 'qr-cell'} />
+  })
+  return <div className="qr-real" aria-label="QR-kode">{cells}</div>
+}
+
 function Device({ type, children }: { type: 'tablet' | 'phone'; children: React.ReactNode }) {
   return (
     <div className={type === 'tablet' ? 'device-tablet' : 'device-phone'}>
@@ -65,7 +78,7 @@ function FamilyFlow() {
             </div>
           </div>
 
-          <div className="qr-flow order-1 lg:order-2" aria-label="iPaden skanner QR-koden på forelderens telefon"><div className="qr-devices"><div className="qr-parent-phone"><Smartphone className="size-4" /><div className="qr-code" aria-hidden="true"><span /><span /><span /><span /></div></div><div className="qr-scan-beam" /><div className="qr-child-tablet"><ScanLine className="size-4" /></div></div><span className="qr-flow-label">Skann for å aktivere</span></div>
+          <div className="qr-flow order-1 lg:order-2" aria-label="iPaden skanner QR-koden på forelderens telefon"><div className="qr-devices"><div className="qr-parent-phone"><Smartphone className="size-4" /><QRCode /></div><div className="qr-scan-beam" /><div className="qr-child-tablet"><div className="qr-tablet-screen"><ScanLine className="size-4" /><span className="qr-scanning-label">Skanner QR</span><span className="qr-login-label">Åpner login</span></div></div></div><span className="qr-flow-label">Skann for å aktivere</span></div>
 
           <div className="order-3 flex flex-col items-center gap-4">
             <Device type="tablet">
