@@ -7,7 +7,6 @@ import {
   CheckCircle2,
   ChevronDown,
   Coins,
-  ScanLine,
   Menu,
   QrCode,
   Sparkles,
@@ -31,18 +30,6 @@ function Logo() {
       <span className="font-mono text-[17px] font-bold tracking-[-0.06em] text-foreground">ukepenger.no</span>
     </a>
   )
-}
-
-function QRCode() {
-  const cells = Array.from({ length: 81 }, (_, index) => {
-    const x = index % 9
-    const y = Math.floor(index / 9)
-    const finder = (ox: number, oy: number) => x >= ox && x < ox + 3 && y >= oy && y < oy + 3
-    const inFinder = finder(0, 0) || finder(6, 0) || finder(0, 6)
-    const on = inFinder ? (x === 0 || x === 2 || y === 0 || y === 2 || (x === 1 && y === 1)) : ((x * 3 + y * 5) % 4 < 2)
-    return <span key={index} className={on ? 'qr-cell qr-cell-on' : 'qr-cell'} />
-  })
-  return <div className="qr-real" aria-label="QR-kode">{cells}</div>
 }
 
 function Device({ type, children }: { type: 'tablet' | 'phone'; children: React.ReactNode }) {
@@ -76,7 +63,7 @@ function FamilyFlow() {
             </div>
           </div>
 
-          <div className="qr-flow order-1 lg:order-2" aria-label="iPaden skanner QR-koden på forelderens telefon"><div className="qr-devices" aria-label="En hånd beveger en mobil over QR-koden"><div className="qr-card"><QrCode className="size-4 text-primary" /><QRCode /></div><div className="qr-arm"><span className="qr-sleeve" /><span className="qr-hand" /><span className="qr-scanner-phone"><ScanLine className="size-3" /></span></div><div className="qr-scan-beam" /><div className="qr-login-card"><ScanLine className="size-3" /><span className="qr-scanning-label">Skanner QR</span><span className="qr-login-label">Åpner login</span></div></div><span className="qr-flow-label">Skann for å aktivere</span></div>
+          <div className="flow-connector order-1 lg:order-2"><span className="connector-line" /><span className="connector-pill"><ArrowRight className="size-4" /></span></div>
 
           <div className="order-3 flex flex-col items-center gap-4">
             <Device type="tablet">
