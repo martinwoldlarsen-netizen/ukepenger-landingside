@@ -90,16 +90,9 @@ body { @apply bg-background text-foreground font-sans; }
 .connector-pill { @apply flex size-8 items-center justify-center rounded-full bg-accent; }
 .qr-flow { @apply flex flex-col items-center gap-2 text-center; }
 .qr-devices { @apply relative flex h-32 w-40 items-center justify-center; }
-.qr-parent-phone { @apply relative z-10 flex h-20 w-12 flex-col items-center justify-center gap-1 rounded-xl bg-foreground text-background shadow-md; animation: qr-parent 3.6s ease-in-out infinite; }
-.qr-child-tablet { @apply absolute right-0 z-0 flex h-16 w-24 items-center justify-center rounded-xl border-4 border-foreground bg-card p-1 text-primary shadow-md; animation: qr-tablet 3.6s ease-in-out infinite; }
-.qr-tablet-screen { @apply flex h-full w-full flex-col items-center justify-center gap-1 rounded-lg bg-secondary font-mono text-[6px] font-bold uppercase tracking-tight text-primary; }
-@keyframes qr-login { 0%, 55% { opacity: 0; } 68%, 100% { opacity: 1; } }
-@keyframes qr-scanning { 0%, 55% { opacity: 1; } 68%, 100% { opacity: 0; } }
-.qr-login-label { animation: qr-login 3.6s ease-in-out infinite; }
-.qr-scanning-label { animation: qr-scanning 3.6s ease-in-out infinite; }
-.qr-real { @apply grid size-8 grid-cols-11 gap-px rounded bg-background p-0.5; }
-.qr-cell { @apply aspect-square bg-background; }
-.qr-cell-on { @apply bg-foreground; }
+.qr-scan-illustration { @apply relative z-10 h-28 w-44 rounded-2xl object-cover shadow-md; animation: qr-illustration 3.6s ease-in-out infinite; }
+.qr-login-card { @apply absolute bottom-0 right-0 z-20 flex items-center gap-1 rounded-lg bg-card px-2 py-1 font-mono text-[7px] font-bold uppercase tracking-tight text-primary shadow-md; }
+.qr-login-label { display: none; }
 .qr-scan-beam { @apply absolute z-20 h-0.5 w-14 rounded-full bg-accent shadow-[0_0_10px_var(--accent)]; animation: qr-scan 3.6s ease-in-out infinite; }
 .qr-scan-beam { @apply absolute z-20 h-0.5 w-10 rounded-full bg-accent shadow-[0_0_10px_var(--accent)]; animation: qr-scan 3.6s ease-in-out infinite; }
 .qr-flow-label { @apply font-mono text-[9px] font-bold uppercase tracking-[0.12em] text-muted-foreground; }
