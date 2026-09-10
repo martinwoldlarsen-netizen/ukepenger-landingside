@@ -7,6 +7,8 @@ import {
   CheckCircle2,
   ChevronDown,
   Coins,
+  ScanLine,
+  Smartphone,
   Menu,
   QrCode,
   Sparkles,
@@ -63,7 +65,7 @@ function FamilyFlow() {
             </div>
           </div>
 
-          <div className="flow-connector order-1 lg:order-2"><span className="connector-line" /><span className="connector-pill"><ArrowRight className="size-4" /></span></div>
+          <div className="qr-flow order-1 lg:order-2" aria-label="iPaden skanner QR-koden på forelderens telefon"><div className="qr-devices"><div className="qr-parent-phone"><Smartphone className="size-4" /><div className="qr-code" aria-hidden="true"><span /><span /><span /><span /></div></div><div className="qr-scan-beam" /><div className="qr-child-tablet"><ScanLine className="size-4" /></div></div><span className="qr-flow-label">Skann for å aktivere</span></div>
 
           <div className="order-3 flex flex-col items-center gap-4">
             <Device type="tablet">
